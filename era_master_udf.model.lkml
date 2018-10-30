@@ -37,3 +37,5 @@ explore: user_saves {
 }
 
 explore: users {}
+
+explore: cdf_lnk_abcde_01234_master {}
