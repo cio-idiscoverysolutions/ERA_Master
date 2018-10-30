@@ -1,6 +1,6 @@
 connection: "aws_era_master_cdf"
 
-include: "*.view.lkml"                       # include all views in this project
+include: "*.view"                       # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
 # # Select the views that should be a part of this model,
@@ -17,3 +17,4 @@ include: "*.view.lkml"                       # include all views in this project
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
+explore: cdf_lnk_abcde_01234_master {}
