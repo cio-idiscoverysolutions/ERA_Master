@@ -13,3 +13,15 @@ persist_with: era_master_default_datagroup
 explore: cdf_lnk_abcde_01234_master {}
 
 explore: src_master {}
+
+explore: evt {}
+
+explore: loc {}
+
+explore: matter {}
+
+explore: obj {}
+
+explore: ppl {}
+
+explore: udf {}
