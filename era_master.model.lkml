@@ -72,4 +72,11 @@ explore: i_ds_vw_lnk_master {
     sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${matter.matter_number} = ${i_ds_vw_lnk_master.matter_number};;
     relationship: one_to_many
   }
+  join: ppl{
+    type: left_outer
+    sql_on: ${udf.ppl_id} = ${ppl.ppl_id} ;;
+    relationship: one_to_many
+    view_label: "People "
+  }
+
 }
