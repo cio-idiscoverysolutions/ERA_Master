@@ -58,4 +58,9 @@ explore: udf {
     sql_on: ${udf.matter_id} = ${matter.matter_id} ;;
     relationship: one_to_many
   }
+  join: i_ds_vw_lnk_master{
+    type: left_outer
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${matter.matter_number} = ${i_ds_vw_lnk_master.matter_number};;
+    relationship: one_to_many
+  }
 }
