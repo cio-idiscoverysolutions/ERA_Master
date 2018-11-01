@@ -7,13 +7,13 @@ view: matter {
     sql: ${TABLE}.MATTER_ID ;;
   }
 
-  dimension: matter_name {
+  dimension: matter_number {
     type: string
     sql: ${TABLE}.NAME ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [matter_id, matter_name, udf.count]
+    drill_fields: [matter_id, matter_number, udf.count]
   }
 }
