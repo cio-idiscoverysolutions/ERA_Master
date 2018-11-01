@@ -217,7 +217,7 @@ view: udf {
 
   measure: number_of_unique_folders_locations {
     type: count_distinct
-    sql: ${loc_id}_id} ;;
+    sql: ${loc_id} ;;
   }
 
   # ----- Sets of fields for drilling ------
