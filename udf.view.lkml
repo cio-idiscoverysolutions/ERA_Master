@@ -210,6 +210,16 @@ view: udf {
     drill_fields: [detail*]
   }
 
+  measure: number_of_unique_files {
+    type: count_distinct
+    sql: ${obj_id} ;;
+  }
+
+  measure: number_of_unique_folders_locations {
+    type: count_distinct
+    sql: ${loc_id}_id} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
