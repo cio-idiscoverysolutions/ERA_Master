@@ -60,10 +60,4 @@ explore: udf {
   }
 }
 
-explore: i_ds_vw_lnk_master {
-  join: matter{
-    type: left_outer
-    sql_on: ${i_ds_vw_lnk_master.matter_number} = ${matter.matter_number} ;;
-    relationship: one_to_many
-  }
-}
+explore: i_ds_vw_lnk_master {}
