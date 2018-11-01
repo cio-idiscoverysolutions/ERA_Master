@@ -1,36 +1,6 @@
 view: src_master {
   sql_table_name: dbo.SRC_MASTER ;;
 
-  dimension: date_relative_to {
-    type: string
-    sql: ${TABLE}.DateRelativeTo ;;
-  }
-
-  dimension: descr {
-    type: string
-    sql: ${TABLE}.DESCR ;;
-  }
-
-  dimension: ditl {
-    type: string
-    sql: ${TABLE}.DITL ;;
-  }
-
-  dimension: ditlbreak_events {
-    type: string
-    sql: ${TABLE}.DITLBreakEvents ;;
-  }
-
-  dimension: ditlcat {
-    type: string
-    sql: ${TABLE}.DITLCat ;;
-  }
-
-  dimension: ditlsort {
-    type: number
-    sql: ${TABLE}.DITLSort ;;
-  }
-
   dimension: name {
     type: string
     sql: ${TABLE}.NAME ;;

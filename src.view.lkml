@@ -7,48 +7,6 @@ view: src {
     sql: ${TABLE}.SRC_ID ;;
   }
 
-  dimension_group: date_created {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_CREATED ;;
-  }
-
-  dimension_group: date_lastmodified {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.DATE_LASTMODIFIED ;;
-  }
-
-  dimension_group: date_source {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.DATE_SOURCE ;;
-  }
 
   dimension: description {
     type: string
