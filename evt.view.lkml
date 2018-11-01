@@ -27,7 +27,7 @@ view: evt {
     sql: ${TABLE}.DITLSort ;;
   }
 
-  dimension: name {
+  dimension: evt_name {
     type: string
     sql: ${TABLE}.NAME ;;
   }
@@ -49,6 +49,6 @@ view: evt {
 
   measure: count {
     type: count
-    drill_fields: [evt_id, name, udf.count]
+    drill_fields: [evt_id, evt_name, udf.count]
   }
 }

@@ -13,12 +13,12 @@ view: src {
     sql: ${TABLE}.DESCRIPTION ;;
   }
 
-  dimension: disp_name {
+  dimension: src_disp_name {
     type: string
     sql: ${TABLE}.DISP_NAME ;;
   }
 
-  dimension: name {
+  dimension: src_name {
     type: string
     sql: ${TABLE}.NAME ;;
   }
@@ -35,6 +35,6 @@ view: src {
 
   measure: count {
     type: count
-    drill_fields: [src_id, name, disp_name, udf.count]
+    drill_fields: [src_id, src_name, src_disp_name, udf.count]
   }
 }

@@ -27,7 +27,7 @@ view: loc {
     sql: ${TABLE}.GPS_LON ;;
   }
 
-  dimension: name {
+  dimension: loc_name {
     type: string
     sql: ${TABLE}.NAME ;;
   }
@@ -44,6 +44,6 @@ view: loc {
 
   measure: count {
     type: count
-    drill_fields: [loc_id, name, udf.count]
+    drill_fields: [loc_id, loc_name, udf.count]
   }
 }

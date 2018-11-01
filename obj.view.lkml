@@ -11,7 +11,7 @@ view: obj {
     sql: ${TABLE}.DESCRIPTION ;;
   }
 
-  dimension: name {
+  dimension: obj_name {
     type: string
     sql: ${TABLE}.NAME ;;
   }
@@ -33,6 +33,6 @@ view: obj {
 
   measure: count {
     type: count
-    drill_fields: [obj_id, name, udf.count]
+    drill_fields: [obj_id, obj_name, udf.count]
   }
 }
