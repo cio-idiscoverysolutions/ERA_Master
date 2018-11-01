@@ -30,8 +30,7 @@ view: evt {
   dimension: evt_name {
 
     type: string
-    sql: ${TABLE}.NAME
-    suggest_persist_for: "2 minutes";;
+    sql: ${TABLE}.NAME;;
   }
 
   dimension: notes {
