@@ -22,6 +22,8 @@ explore: obj {}
 
 explore: ppl {}
 
+explore: device {}
+
 explore: udf {
   label: "Universal Data Format"
   join: ppl{
@@ -56,6 +58,11 @@ explore: udf {
   join: matter{
     type: left_outer
     sql_on: ${udf.matter_id} = ${matter.matter_id} ;;
+    relationship: one_to_many
+  }
+  join: device{
+    type: left_outer
+    sql_on: ${udf.device_id} = ${device.device_id} ;;
     relationship: one_to_many
   }
 }

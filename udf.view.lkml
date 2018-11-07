@@ -136,6 +136,12 @@ view: udf {
     sql: ${TABLE}.MATTER_ID ;;
   }
 
+  dimension: device_id {
+    type: number
+    # hidden: yes
+    sql: ${TABLE}.DEVICE_ID ;;
+  }
+
   dimension: notes {
     type: string
     sql: ${TABLE}.NOTES ;;
