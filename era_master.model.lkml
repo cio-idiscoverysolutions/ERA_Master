@@ -68,3 +68,5 @@ explore: udf {
 }
 
 explore: i_ds_vw_lnk_master {}
+
+explore: i_ds_vw_jmp_master {}
