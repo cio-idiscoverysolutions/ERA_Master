@@ -25,7 +25,8 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_BEG_LCL ;;
   }
@@ -43,9 +44,11 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_BEG_SOURCE ;;
+
   }
 
 
@@ -63,7 +66,8 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_BEG_UTC ;;
   }
@@ -82,7 +86,8 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_END_LCL ;;
   }
@@ -100,7 +105,8 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_END_SOURCE ;;
   }
@@ -118,7 +124,8 @@ view: udf {
       day_of_month,
       day_of_week,
       hour_of_day,
-      month_name
+      month_name,
+      fiscal_month_num
     ]
     sql: ${TABLE}.DATE_END_UTC ;;
   }
