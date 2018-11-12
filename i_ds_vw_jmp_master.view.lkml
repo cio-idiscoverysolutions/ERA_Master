@@ -1,6 +1,11 @@
 view: i_ds_vw_jmp_master {
   sql_table_name: dbo.iDS_vw_JMP_Master ;;
 
+  dimension: appid {
+    type: string
+    sql: ${TABLE}.appid ;;
+  }
+
   dimension: common_path {
     type: string
     sql: ${TABLE}.common_path ;;
@@ -25,11 +30,6 @@ view: i_ds_vw_jmp_master {
   dimension: file_create_date_utc {
     type: string
     sql: ${TABLE}.file_create_date_UTC ;;
-  }
-
-  dimension: file_mft_date_utc {
-    type: string
-    sql: ${TABLE}.file_mft_date_UTC ;;
   }
 
   dimension: file_modify_date_utc {
@@ -92,11 +92,6 @@ view: i_ds_vw_jmp_master {
     sql: ${TABLE}.IDS_SourceID ;;
   }
 
-  dimension: lnk_offset {
-    type: string
-    sql: ${TABLE}.LNK_offset ;;
-  }
-
   dimension: local_path {
     type: string
     sql: ${TABLE}.local_path ;;
@@ -110,6 +105,16 @@ view: i_ds_vw_jmp_master {
   dimension: matter_number {
     type: string
     sql: ${TABLE}.MatterNumber ;;
+  }
+
+  dimension: mru_date_utc {
+    type: string
+    sql: ${TABLE}.MRU_date_UTC ;;
+  }
+
+  dimension: mru_mfu {
+    type: string
+    sql: ${TABLE}.MRU_MFU ;;
   }
 
   dimension: netbios_name {
@@ -142,14 +147,9 @@ view: i_ds_vw_jmp_master {
     sql: ${TABLE}.source_type ;;
   }
 
-  dimension: src_inode {
+  dimension: stream_ {
     type: string
-    sql: ${TABLE}.src_inode ;;
-  }
-
-  dimension: src_seq_ {
-    type: string
-    sql: ${TABLE}.src_seq_ ;;
+    sql: ${TABLE}.stream_ ;;
   }
 
   dimension: target_inode {
