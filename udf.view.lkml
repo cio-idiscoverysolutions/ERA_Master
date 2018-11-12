@@ -21,7 +21,11 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_BEG_LCL ;;
   }
@@ -35,10 +39,16 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_BEG_SOURCE ;;
   }
+
+
 
   dimension_group: date_beg_utc {
     type: time
@@ -49,7 +59,11 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_BEG_UTC ;;
   }
@@ -64,7 +78,11 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_END_LCL ;;
   }
@@ -78,7 +96,11 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_END_SOURCE ;;
   }
@@ -92,7 +114,11 @@ view: udf {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name
     ]
     sql: ${TABLE}.DATE_END_UTC ;;
   }
