@@ -70,3 +70,7 @@ explore: udf {
 explore: i_ds_vw_lnk_master {}
 
 explore: i_ds_vw_jmp_master {}
+
+explore: i_ds_vw_sbag_master {}
+
+explore: i_ds_vw_usb_master {}
