@@ -41,6 +41,21 @@ view: i_ds_vw_tia_trash_master {
     type: string
     sql: ${TABLE}.IDS_Source_File ;;
   }
+  dimension: ids_dupe {
+    type: string
+    sql: ${TABLE}.IDS_Dupe ;;
+  }
+
+  dimension: ids_ignore {
+    type: string
+    sql: ${TABLE}.IDS_Ignore ;;
+  }
+
+  dimension: ids_sourceid {
+    type: number
+    value_format_name: id
+    sql: ${TABLE}.IDS_SOURCEID ;;
+  }
 
   dimension: inode {
     type: string
