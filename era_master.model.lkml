@@ -74,3 +74,7 @@ explore: i_ds_vw_jmp_master {}
 explore: i_ds_vw_sbag_master {}
 
 explore: i_ds_vw_usb_master {}
+
+explore: i_ds_vw_tia_trash_master {}
+
+explore: i_ds_vw_cafae_user_assist_master {}
