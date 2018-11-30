@@ -78,3 +78,7 @@ explore: i_ds_vw_usb_master {}
 explore: i_ds_vw_tia_trash_master {}
 
 explore: i_ds_vw_cafae_user_assist_master {}
+
+explore: i_ds_vw_cafae_openrunmru_master {}
+
+explore: i_ds_vw_cafae_opensavemru_master {}

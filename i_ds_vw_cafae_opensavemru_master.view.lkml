@@ -1,4 +1,4 @@
-view: i_ds_vw_cafae_opensavenmru_master {
+view: i_ds_vw_cafae_opensavemru_master {
   sql_table_name: dbo.iDS_vw_CAFAE_OPENSAVENMRU_Master ;;
 
   dimension: csvrowid {
