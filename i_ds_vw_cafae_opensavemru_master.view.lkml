@@ -1,5 +1,5 @@
 view: i_ds_vw_cafae_opensavemru_master {
-  sql_table_name: dbo.iDS_vw_CAFAE_OPENSAVENMRU_Master ;;
+  sql_table_name: dbo.iDS_vw_CAFAE_OPENSAVEMRU_Master ;;
 
   dimension: csvrowid {
     type: number
@@ -57,88 +57,48 @@ view: i_ds_vw_cafae_opensavemru_master {
     sql: ${TABLE}.MatterNumber ;;
   }
 
-  dimension: mru_date_time {
+  dimension: mru_access_dt_utc {
     type: string
-    sql: ${TABLE}.MRU_DateTime ;;
+    sql: ${TABLE}.MRU_accessDt_UTC ;;
   }
 
-  dimension: mru_desc {
+  dimension: mru_create_dt_utc {
     type: string
-    sql: ${TABLE}.MRU_desc ;;
+    sql: ${TABLE}.MRU_createDt_UTC ;;
   }
 
-  dimension: mru_extra {
+  dimension: mru_item_no {
     type: string
-    sql: ${TABLE}.MRU_extra ;;
+    sql: ${TABLE}.MRU_itemNo ;;
   }
 
-  dimension: mru_filename {
+  dimension: mru_modify_dt_utc {
     type: string
-    sql: ${TABLE}.MRU_filename ;;
+    sql: ${TABLE}.MRU_modifyDt_UTC ;;
   }
 
-  dimension: mru_format {
+  dimension: mru_name_utc {
     type: string
-    sql: ${TABLE}.MRU_format ;;
+    sql: ${TABLE}.MRU_name_UTC ;;
   }
 
-  dimension: mru_host {
+  dimension: mru_reg_dt_utc {
     type: string
-    sql: ${TABLE}.MRU_host ;;
+    sql: ${TABLE}.MRU_regDt_UTC ;;
   }
 
-  dimension: mru_inode {
+  dimension: mru_subkey {
     type: string
-    sql: ${TABLE}.MRU_inode ;;
+    sql: ${TABLE}.MRU_subkey ;;
   }
 
-  dimension: mru_macb {
+  dimension: mru_support_name {
     type: string
-    sql: ${TABLE}.MRU_MACB ;;
-  }
-
-  dimension: mru_notes {
-    type: string
-    sql: ${TABLE}.MRU_notes ;;
-  }
-
-  dimension: mru_short {
-    type: string
-    sql: ${TABLE}.MRU_short ;;
-  }
-
-  dimension: mru_source {
-    type: string
-    sql: ${TABLE}.MRU_source ;;
-  }
-
-  dimension: mru_sourcetype {
-    type: string
-    sql: ${TABLE}.MRU_sourcetype ;;
-  }
-
-  dimension: mru_timezone {
-    type: string
-    sql: ${TABLE}.MRU_timezone ;;
-  }
-
-  dimension: mru_type {
-    type: string
-    sql: ${TABLE}.MRU_type ;;
-  }
-
-  dimension: mru_user {
-    type: string
-    sql: ${TABLE}.MRU_user ;;
-  }
-
-  dimension: mru_version {
-    type: string
-    sql: ${TABLE}.MRU_version ;;
+    sql: ${TABLE}.MRU_supportName ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [mru_filename, ids_device_name]
+    drill_fields: [mru_support_name, ids_device_name]
   }
 }
