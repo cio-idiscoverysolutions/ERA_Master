@@ -82,3 +82,5 @@ explore: i_ds_vw_cafae_user_assist_master {}
 explore: i_ds_vw_cafae_openrunmru_master {}
 
 explore: i_ds_vw_cafae_opensavemru_master {}
+
+explore: i_ds_vw_pf_master {}
