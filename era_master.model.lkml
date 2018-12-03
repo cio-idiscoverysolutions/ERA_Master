@@ -24,6 +24,8 @@ explore: ppl {}
 
 explore: device {}
 
+explore: src{}
+
 explore: udf {
   label: "Universal Data Format"
   join: ppl{
