@@ -24,6 +24,9 @@ explore: ppl {}
 
 explore: device {}
 
+explore: src_files {}
+
+
 explore: src{
   join: src_files{
     type: left_outer

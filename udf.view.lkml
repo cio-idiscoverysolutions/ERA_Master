@@ -233,6 +233,7 @@ view: udf {
     sql: ${loc_id} ;;
   }
 
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
