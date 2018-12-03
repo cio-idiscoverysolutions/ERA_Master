@@ -2,15 +2,15 @@ view: i_ds_vw_raw_counts_derived {
     derived_table: {
       sql:
 
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_LNK_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_JMP_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_SBAG_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_USB_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_USER_ASSIST_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_TIA_TRASH_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_PF_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENRUNMRU_Master UNION ALL
-Select MatterNumber, IDS_Source_File, IDS_Dupe, IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENSAVEMRU_Master      ;;
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_LNK_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_JMP_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_SBAG_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_USB_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_USER_ASSIST_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_TIA_TRASH_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_PF_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENRUNMRU_Master UNION ALL
+Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_Ignore,'0') IDS_Ignore,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENSAVEMRU_Master      ;;
     }
 
   dimension: MatterNumber {
