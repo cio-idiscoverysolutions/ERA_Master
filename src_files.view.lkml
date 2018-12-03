@@ -28,7 +28,7 @@ view: src_files {
     drill_fields: [scmst_id, filename]
   }
   measure: linecnt_measure {
-    type: number
+    type: sum
     sql: ${TABLE}.LINECNT ;;
   }
   # # You can specify the table name if it's different from the view name:
