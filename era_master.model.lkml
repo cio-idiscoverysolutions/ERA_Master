@@ -151,15 +151,7 @@ explore: udf {
     view_label: "SRC File Name"
 
   }
-  join: i_ds_vw_raw_counts_derived{
-    type: left_outer
-    sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File}
 
-            );;
-    relationship: one_to_many
-    view_label: "SRC File Catalog Counts"
-
-  }
 }
 
 explore: i_ds_vw_lnk_master {}
