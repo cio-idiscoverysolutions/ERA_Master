@@ -24,7 +24,15 @@ explore: ppl {}
 
 explore: device {}
 
-explore: src{}
+explore: src{
+  join: src_files{
+    type: left_outer
+    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id};;
+    relationship: one_to_many
+    view_label: "People "
+
+  }
+}
 
 explore: udf {
   label: "Universal Data Format"
