@@ -77,7 +77,7 @@ explore: udf {
   }
   join: i_ds_vw_lnk_master{
     type: left_outer
-    sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${src.src_name} = "LNK_FILES";;
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${src.src_name} = 'LNK_FILES';;
     relationship: one_to_many
   }
 }
