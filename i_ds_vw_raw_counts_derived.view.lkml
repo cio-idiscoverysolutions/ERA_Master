@@ -25,12 +25,12 @@ Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_
   }
 
   dimension: IDS_Dupe {
-    type: yesno
+    type: number
     sql: ${TABLE}.IDS_Dupe ;;
   }
 
   dimension: IDS_Ignore {
-    type: yesno
+    type: number
     sql: ${TABLE}.IDS_Ignore ;;
   }
 
