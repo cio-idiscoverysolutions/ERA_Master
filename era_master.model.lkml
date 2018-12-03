@@ -80,6 +80,16 @@ explore: udf {
     sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${src.src_name} = 'LNK_FILES';;
     relationship: one_to_many
   }
+  join: i_ds_vw_jmp_master{
+    type: left_outer
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_jmp_master.ids_sourceid} AND ${src.src_name} = 'JMP_LISTS';;
+    relationship: one_to_many
+  }
+  join: i_ds_vw_cafae_openrunmru_master{
+    type: left_outer
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_cafae_openrunmru_master.ids_sourceid} AND ${src.src_name} = 'CAFAE_OPENRUNMRU';;
+    relationship: one_to_many
+  }
   join: src_files{
     type: left_outer
     sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id} AND ${src_files.filename} = ${i_ds_vw_lnk_master.ids_source_file};;

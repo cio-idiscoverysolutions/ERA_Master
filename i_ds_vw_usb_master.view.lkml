@@ -112,7 +112,7 @@ view: i_ds_vw_usb_master {
     sql: ${TABLE}.ids_source_file ;;
   }
 
-  dimension: ids_source_id {
+  dimension: ids_sourceid {
     type: number
     sql: ${TABLE}.IDS_SourceID ;;
   }

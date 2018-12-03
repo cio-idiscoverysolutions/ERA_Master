@@ -57,7 +57,7 @@ view: i_ds_vw_cafae_user_assist_master {
     sql: ${TABLE}.IDS_Source_File ;;
   }
 
-  dimension: ids_source_id {
+  dimension: ids_sourceid {
     type: number
     sql: ${TABLE}.IDS_SourceID ;;
   }
