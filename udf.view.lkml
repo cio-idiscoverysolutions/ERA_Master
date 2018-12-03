@@ -228,6 +228,10 @@ view: udf {
     sql: ${obj_id} ;;
   }
 
+  measure: number_of_unique_records_by_source_file {
+    type: count_distinct
+    sql: ${src_record_id} ;;
+  }
   measure: number_of_unique_folders_locations {
     type: count_distinct
     sql: ${loc_id} ;;
