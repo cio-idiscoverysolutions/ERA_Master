@@ -8,8 +8,14 @@ view: src_files {
   }
 
   dimension: scmst_id {
-    type: number
+    type: string
     sql: ${TABLE}.SCMST_ID ;;
+  }
+
+
+  dimension: linecnt {
+    type: number
+    sql: ${TABLE}.LINECNT ;;
   }
 
   dimension: filename {
