@@ -27,7 +27,10 @@ view: src_files {
     type: count
     drill_fields: [scmst_id, filename]
   }
-
+  measure: linecnt_measure {
+    type: number
+    sql: ${TABLE}.LINECNT ;;
+  }
   # # You can specify the table name if it's different from the view name:
   # sql_table_name: my_schema_name.tester ;;
   #
