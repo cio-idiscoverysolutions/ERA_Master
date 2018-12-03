@@ -82,7 +82,7 @@ explore: udf {
   }
   join: src_files{
     type: left_outer
-    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id};;
+    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id} AND ${src_files.filename} = ${i_ds_vw_lnk_master.ids_source_file};;
     relationship: one_to_many
     view_label: "SRC File Name"
 
