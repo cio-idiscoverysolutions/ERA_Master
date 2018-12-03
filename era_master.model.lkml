@@ -26,6 +26,7 @@ explore: device {}
 
 explore: src_files {}
 
+explore: i_ds_vw_raw_counts_derived {}
 
 explore: src{
   join: src_files{
