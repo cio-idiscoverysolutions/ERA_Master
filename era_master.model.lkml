@@ -29,7 +29,7 @@ explore: src{
     type: left_outer
     sql_on: ${src_files.scmst_id} = ${src_files.scmst_id};;
     relationship: one_to_many
-    view_label: "People "
+    view_label: "Source Files"
 
   }
 }
@@ -40,7 +40,7 @@ explore: udf {
     type: left_outer
     sql_on: ${udf.ppl_id} = ${ppl.ppl_id} ;;
     relationship: one_to_many
-    view_label: "People "
+    view_label: "People"
 
   }
 
@@ -79,6 +79,13 @@ explore: udf {
     type: left_outer
     sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${src.src_name} = 'LNK_FILES';;
     relationship: one_to_many
+  }
+  join: src_files{
+    type: left_outer
+    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id};;
+    relationship: one_to_many
+    view_label: "SRC File Name"
+
   }
 }
 
