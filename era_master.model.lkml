@@ -125,7 +125,7 @@ explore: udf {
     sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id}
             AND (
               ${src_files.filename} = ${i_ds_vw_lnk_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_jmp_master.ids_source_file})
+              OR ${src_files.filename} = ${i_ds_vw_jmp_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_cafae_openrunmru_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_cafae_opensavemru_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_cafae_user_assist_master.ids_source_file}
