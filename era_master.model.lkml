@@ -24,14 +24,22 @@ explore: ppl {}
 
 explore: device {}
 
-explore: src_files {}
+explore: src_files {
+  join: i_ds_vw_raw_counts_derived{
+    type: left_outer
+    sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File};;
+    relationship: one_to_one
+    view_label: "Source Files Counts"
+
+  }
+}
 
 explore: i_ds_vw_raw_counts_derived {}
 
 explore: src{
   join: src_files{
     type: left_outer
-    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id};;
+    sql_on: ${src_files.scmst_id} = ${src.src_name};;
     relationship: one_to_many
     view_label: "Source Files"
 
