@@ -67,7 +67,26 @@ view: i_ds_vw_lnk_master {
     value_format_name: id
     sql: ${TABLE}.IDS_SOURCEID ;;
   }
+  dimension: ids_custodian {
+    type: string
+    sql: ${TABLE}.IDS_Custodian ;;
+  }
 
+  dimension: ids_device_name {
+    type: string
+    sql: ${TABLE}.IDS_DeviceName ;;
+  }
+
+  dimension: ids_device_notes {
+    type: string
+    sql: ${TABLE}.IDS_DeviceNotes ;;
+  }
+
+
+  dimension: ids_evidence_number {
+    type: string
+    sql: ${TABLE}.IDS_EvidenceNumber ;;
+  }
   dimension: lnk_offset {
     type: string
     sql: ${TABLE}.LNK_offset ;;
