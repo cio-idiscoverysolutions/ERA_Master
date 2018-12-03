@@ -48,6 +48,12 @@ Select MatterNumber, IDS_Source_File, isnull(IDS_Dupe,'0') IDS_Dupe, ISNULL(IDS_
     sql: ${TABLE}.IDS_EvidenceNumber ;;
   }
 
-
-
+  measure: count_dupes {
+    type: sum
+   sql: ${TABLE}.IDS_Dupe  ;;
+  }
+  measure: count_exclude {
+    type: sum
+    sql: ${TABLE}.IDS_Ignore  ;;
+  }
     }
