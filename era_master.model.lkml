@@ -141,7 +141,7 @@ explore: udf {
   }
   join: attribute{
     type: left_outer
-    sql_on: ${udf.udf_id} = ${attribute.target_id}.ids_sourceid AND ${attribute.target_type} = 'U';;
+    sql_on: ${udf.udf_id} = ${attribute.target_id} AND ${attribute.target_type} = 'U';;
     relationship: one_to_many
   }
   join: src_files{
