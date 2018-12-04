@@ -134,7 +134,7 @@ explore: udf {
   }
   join: i_ds_vw_cafae_recentdocs_master{
     type: left_outer
-    sql_on: ${udf.src_record_id} = ${i_ds_vw_usb_master.ids_sourceid} AND ${src.src_name} = 'CAFAE_RECENTDOCS';;
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_cafae_recentdocs_master.ids_sourceid} AND ${src.src_name} = 'CAFAE_RECENTDOCS';;
     relationship: one_to_many
   }
   join: src_files{
