@@ -26,6 +26,10 @@ explore: device {}
 
 explore: attribute {}
 
+explore: cda {}
+
+explore: cda_results {}
+
 explore: src_files {
   join: i_ds_vw_raw_counts_derived{
     type: left_outer
