@@ -242,22 +242,14 @@ view: udf {
   set: detail {
     fields: [
       udf_id,
-      ppl.ppl_id,
       ppl.full_name,
-      ppl.first_name,
-      ppl.middle_name,
-      ppl.last_name,
-      obj.obj_id,
       obj.obj_name,
-      loc.loc_id,
       loc.loc_name,
-      evt.evt_id,
       evt.evt_name,
-      src.src_id,
-      src.name,
-      src.disp_name,
-      matter.matter_id,
-      matter.name
+      src.src_name,
+      device.name,
+      attribute.value,
+      matter.matter_number,
     ]
   }
 }
