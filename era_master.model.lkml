@@ -139,6 +139,11 @@ explore: udf {
     sql_on: ${udf.src_record_id} = ${i_ds_vw_cafae_recentdocs_master.ids_sourceid} AND ${src.src_name} = 'CAFAE_RECENTDOCS';;
     relationship: one_to_many
   }
+  join: attribute{
+    type: left_outer
+    sql_on: ${udf.udf_id} = ${attribute.target_id}.ids_sourceid} AND ${attribute.target_type} = 'U';;
+    relationship: one_to_many
+  }
   join: src_files{
     type: left_outer
     sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id}
