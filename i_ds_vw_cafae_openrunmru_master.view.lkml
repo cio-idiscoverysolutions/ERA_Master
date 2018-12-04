@@ -1,6 +1,16 @@
 view: i_ds_vw_cafae_openrunmru_master {
   sql_table_name: dbo.iDS_vw_CAFAE_OPENRUNMRU_Master ;;
 
+  dimension: access_date_utc {
+    type: string
+    sql: ${TABLE}.access_date_UTC ;;
+  }
+
+  dimension: create_date_utc {
+    type: string
+    sql: ${TABLE}.create_date_UTC ;;
+  }
+
   dimension: csvrowid {
     type: number
     value_format_name: id
@@ -52,53 +62,44 @@ view: i_ds_vw_cafae_openrunmru_master {
     sql: ${TABLE}.IDS_SourceID ;;
   }
 
+
+  dimension: item_ {
+    type: string
+    sql: ${TABLE}.item_ ;;
+  }
+
   dimension: matter_number {
     type: string
     sql: ${TABLE}.MatterNumber ;;
   }
 
-  dimension: mru_access_dt_utc {
+  dimension: modify_date_utc {
     type: string
-    sql: ${TABLE}.MRU_accessDt_UTC ;;
+    sql: ${TABLE}.modify_date_UTC ;;
   }
 
-  dimension: mru_create_dt_utc {
+  dimension: name {
     type: string
-    sql: ${TABLE}.MRU_createDt_UTC ;;
+    sql: ${TABLE}.name ;;
   }
 
-  dimension: mru_item_no {
+  dimension: reg_date_utc {
     type: string
-    sql: ${TABLE}.MRU_itemNo ;;
+    sql: ${TABLE}.reg_date_UTC ;;
   }
 
-  dimension: mru_modify_dt_utc {
+  dimension: subkey {
     type: string
-    sql: ${TABLE}.MRU_modifyDt_UTC ;;
+    sql: ${TABLE}.subkey ;;
   }
 
-  dimension: mru_name_utc {
+  dimension: support_name {
     type: string
-    sql: ${TABLE}.MRU_name_UTC ;;
-  }
-
-  dimension: mru_reg_dt_utc {
-    type: string
-    sql: ${TABLE}.MRU_regDt_UTC ;;
-  }
-
-  dimension: mru_subkey {
-    type: string
-    sql: ${TABLE}.MRU_subkey ;;
-  }
-
-  dimension: mru_support_name {
-    type: string
-    sql: ${TABLE}.MRU_supportName ;;
+    sql: ${TABLE}.support_name ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [mru_support_name, ids_device_name]
+    drill_fields: [name, support_name, ids_device_name]
   }
 }
