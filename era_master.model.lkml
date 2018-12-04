@@ -139,6 +139,11 @@ explore: udf {
     sql_on: ${udf.src_record_id} = ${i_ds_vw_cafae_recentdocs_master.ids_sourceid} AND ${src.src_name} = 'CAFAE_RECENTDOCS';;
     relationship: one_to_many
   }
+  join: i_ds_vw_evt_walk_master{
+    type: left_outer
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_evt_walk_master.ids_sourceid} AND ${src.src_name} = 'EVT_WALK';;
+    relationship: one_to_many
+  }
   join: attribute{
     type: left_outer
     sql_on: ${udf.udf_id} = ${attribute.target_id} AND ${attribute.target_type} = 'U';;
@@ -157,7 +162,8 @@ explore: udf {
               OR ${src_files.filename} = ${i_ds_vw_sbag_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_tia_trash_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_usb_master.ids_source_file}
-               OR ${src_files.filename} = ${i_ds_vw_cafae_recentdocs_master.ids_source_file}
+              OR ${src_files.filename} = ${i_ds_vw_cafae_recentdocs_master.ids_source_file}
+              OR ${src_files.filename} = ${i_ds_vw_evt_walk_master.ids_source_file}
 
             );;
     relationship: one_to_many
@@ -186,3 +192,5 @@ explore: i_ds_vw_cafae_opensavemru_master {}
 explore: i_ds_vw_cafae_recentdocs_master {}
 
 explore: i_ds_vw_pf_master {}
+
+explore: i_ds_vw_evt_walk_master {}
