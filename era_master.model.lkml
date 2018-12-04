@@ -101,6 +101,11 @@ explore: udf {
     sql_on: ${udf.device_id} = ${device.device_id} ;;
     relationship: one_to_many
   }
+  join: cda_results{
+    type: left_outer
+    sql_on: ${udf.udf_id} = ${cda_results.udf_id} ;;
+    relationship: many_to_many
+  }
   join: i_ds_vw_lnk_master{
     type: left_outer
     sql_on: ${udf.src_record_id} = ${i_ds_vw_lnk_master.ids_sourceid} AND ${src.src_name} = 'LNK_FILES';;
