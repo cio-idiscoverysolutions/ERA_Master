@@ -28,7 +28,15 @@ explore: attribute {}
 
 explore: cda {}
 
-explore: cda_results {}
+explore: cda_results {
+  join: cda{
+    type: inner
+    sql_on: ${cda.cda_id} = ${cda.cda_id};;
+    relationship: many_to_one
+    view_label: "CDA Results"
+
+  }
+}
 
 explore: src_files {
   join: i_ds_vw_raw_counts_derived{
