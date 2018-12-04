@@ -10,6 +10,7 @@ view: src_master {
   dimension: scmst_id {
     type: string
     sql: ${TABLE}.SCMST_ID ;;
+    drill_fields: [udf.obj_id]
   }
 
   dimension: type {
