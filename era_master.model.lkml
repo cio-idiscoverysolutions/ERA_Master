@@ -24,6 +24,8 @@ explore: ppl {}
 
 explore: device {}
 
+explore: attribute {}
+
 explore: src_files {
   join: i_ds_vw_raw_counts_derived{
     type: left_outer
