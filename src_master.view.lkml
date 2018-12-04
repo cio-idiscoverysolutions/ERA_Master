@@ -4,6 +4,7 @@ view: src_master {
   dimension: name {
     type: string
     sql: ${TABLE}.NAME ;;
+    drill_fields: [udf.obj_id]
   }
 
   dimension: scmst_id {
