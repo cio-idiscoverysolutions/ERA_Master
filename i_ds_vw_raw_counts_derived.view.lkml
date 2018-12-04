@@ -54,8 +54,9 @@ Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe
   }
   measure: count_exclude {
     type: sum
-    sql: ${TABLE}.IDS_Ignore  ;;
+    sql: ${TABLE}.IDS_Ignore;;
   }
+
    measure: count {
     type: count
     drill_fields: [IDS_Source_File, IDS_EvidenceNumber, IDS_DeviceNotes,IDS_Custodian,MatterNumber]
