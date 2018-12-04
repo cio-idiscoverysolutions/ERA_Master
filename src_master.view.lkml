@@ -23,7 +23,7 @@ view: src_master {
 
   measure: count {
     type: count
-    drill_fields: [name]
+    drill_fields: [detail*]
   }
 # ----- Sets of fields for drilling ------
   set: detail {
