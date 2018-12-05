@@ -165,6 +165,11 @@ explore: udf {
     sql_on: ${udf.src_record_id} = ${i_ds_vw_evt_walk_master.ids_sourceid} AND ${src.src_name} = 'EVT_WALK';;
     relationship: one_to_many
   }
+  join: i_ds_vw_srum_network_usage_master{
+    type: left_outer
+    sql_on: ${udf.src_record_id} = ${i_ds_vw_srum_network_usage_master.ids_sourceid} AND ${src.src_name} = 'SRUM_NETWORK_USAGE';;
+    relationship: one_to_many
+  }
   join: attribute{
     type: left_outer
     sql_on: ${udf.udf_id} = ${attribute.target_id} AND ${attribute.target_type} = 'U';;
@@ -185,6 +190,7 @@ explore: udf {
               OR ${src_files.filename} = ${i_ds_vw_usb_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_cafae_recentdocs_master.ids_source_file}
               OR ${src_files.filename} = ${i_ds_vw_evt_walk_master.ids_source_file}
+               OR ${src_files.filename} = ${i_ds_vw_srum_network_usage_master.ids_source_file}
             );;
     relationship: one_to_many
     view_label: "SRC File Name"

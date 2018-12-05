@@ -16,6 +16,8 @@ From (
         Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENSAVEMRU_Master    UNION ALL
         Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_RECENTDOCS_Master     UNION ALL
         Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_EVT_WALK_Master  UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_SRUM_NETWORK_USAGE_Master  UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_WISP_NTFS_Master  UNION ALL
         Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_NTFS_WALK_Master
     ) data
     Group by MatterNumber, IDS_Source_File, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber
