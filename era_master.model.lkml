@@ -227,3 +227,7 @@ explore: i_ds_vw_pf_master {}
 explore: i_ds_vw_evt_walk_master {}
 
 explore: i_ds_vw_wisp_ntfs_master {}
+
+explore: i_ds_vw_srum_network_usage_master {}
+
+explore: i_ds_vw_ntfs_walk_master {}
