@@ -37,7 +37,10 @@ Group by MatterNumber, IDS_Source_File, IDS_Custodian, IDS_DeviceName, IDS_Devic
     type: number
     sql: ${TABLE}.IDS_Ignore ;;
   }
-
+  dimension: Record_Count {
+    type: number
+    sql: ${TABLE}.Record_Count ;;
+  }
   dimension: IDS_Custodian {
     type: string
     sql: ${TABLE}.IDS_Custodian ;;
