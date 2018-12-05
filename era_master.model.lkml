@@ -192,7 +192,7 @@ explore: udf {
   }
 join: i_ds_vw_raw_counts_derived {
   type: full_outer
-  relationship: many_to_many
+  relationship: many_to_one
   sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File} ;;
 }
 }
