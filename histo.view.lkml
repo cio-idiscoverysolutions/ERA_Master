@@ -68,4 +68,9 @@ view: histo {
     type: count
     drill_fields: [chart_name]
   }
+  measure: sum {
+    type: sum
+     sql: ${TABLE}.VALUE;;
+  }
+
 }
