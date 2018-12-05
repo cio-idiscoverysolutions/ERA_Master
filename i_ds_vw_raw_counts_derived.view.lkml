@@ -1,20 +1,27 @@
 view: i_ds_vw_raw_counts_derived {
     derived_table: {
       sql:
-select MatterNumber, IDS_Source_File, SUM(IDS_Dupe) IDS_Dupe, SUM(IDS_Ignore) IDS_Ignore, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber, Count(*) Record_Count
+Select z.*, sf.linecnt
 From (
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore  ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_LNK_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_JMP_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_SBAG_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_USB_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_USER_ASSIST_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_TIA_TRASH_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_PF_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENRUNMRU_Master UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENSAVEMRU_Master    UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_RECENTDOCS_Master     UNION ALL
-Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_EVT_WALK_Master     ) data
-Group by MatterNumber, IDS_Source_File, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber;;
+    select MatterNumber, IDS_Source_File, SUM(IDS_Dupe) IDS_Dupe, SUM(IDS_Ignore) IDS_Ignore, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber, Count(*) Record_Count
+    From (
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore  ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_LNK_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_JMP_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_SBAG_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_USB_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_USER_ASSIST_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_TIA_TRASH_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_PF_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENRUNMRU_Master UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_OPENSAVEMRU_Master    UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_CAFAE_RECENTDOCS_Master     UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_EVT_WALK_Master  UNION ALL
+        Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_NTFS_WALK_Master
+    ) data
+    Group by MatterNumber, IDS_Source_File, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber
+  )z
+  Left Join src_files sf
+    ON sf.filename = z.IDS_Source_File;;
     }
 
   dimension: MatterNumber {
@@ -40,6 +47,10 @@ Group by MatterNumber, IDS_Source_File, IDS_Custodian, IDS_DeviceName, IDS_Devic
   dimension: Record_Count {
     type: number
     sql: ${TABLE}.Record_Count ;;
+  }
+  dimension: LINECNT {
+    type: number
+    sql: ${TABLE}.LINECNT ;;
   }
   dimension: IDS_Custodian {
     type: string
