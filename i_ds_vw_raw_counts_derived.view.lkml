@@ -50,11 +50,11 @@ Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe
     sql: ${TABLE}.IDS_EvidenceNumber ;;
   }
 
-  measure: count_dupes {
+  measure: sum_dupes {
     type: sum
    sql: ${TABLE}.IDS_Dupe  ;;
   }
-  measure: count_exclude {
+  measure: sum_exclude {
     type: sum
     sql: ${TABLE}.IDS_Ignore;;
   }
