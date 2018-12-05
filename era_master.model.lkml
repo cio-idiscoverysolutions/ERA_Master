@@ -190,11 +190,7 @@ explore: udf {
     view_label: "SRC File Name"
 
   }
-join: i_ds_vw_raw_counts_derived {
-  type: full_outer
-  relationship: many_to_one
-  sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File} ;;
-}
+
 }
 
 explore: i_ds_vw_lnk_master {}
