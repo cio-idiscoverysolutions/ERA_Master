@@ -216,3 +216,5 @@ explore: i_ds_vw_cafae_recentdocs_master {}
 explore: i_ds_vw_pf_master {}
 
 explore: i_ds_vw_evt_walk_master {}
+
+explore: i_ds_vw_wisp_ntfs_master {}
