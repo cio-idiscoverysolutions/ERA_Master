@@ -72,5 +72,24 @@ view: histo {
     type: sum
      sql: ${TABLE}.VALUE;;
   }
-
+  measure: sum_UNIQ_EVT {
+    type: sum
+    sql: ${TABLE}.UNIQ_EVT;;
+  }
+  measure: sum_UNIQ_LOC {
+    type: sum
+    sql: ${TABLE}.UNIQ_LOC;;
+  }
+  measure: sum_UNIQ_DAYS {
+    type: sum
+    sql: ${TABLE}.UNIQ_DAYS;;
+  }
+  measure: sum_UNIQ_OBJ {
+    type: sum
+    sql: ${TABLE}.UNIQ_OBJ;;
+  }
+  measure: sum_UNIQ_PPL {
+    type: sum
+    sql: ${TABLE}.UNIQ_PPL;;
+  }
 }
