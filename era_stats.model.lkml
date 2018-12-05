@@ -21,7 +21,7 @@ explore: db {}
 explore: dim {
   join: evt{
     type: left_outer
-    sql_on: ${evt.evt_id}.cda_id} = ${evt.evt_id};;
+    sql_on: ${evt.evt_id} = ${evt.evt_id};;
     relationship: one_to_one
     view_label: "Event Details"
 
