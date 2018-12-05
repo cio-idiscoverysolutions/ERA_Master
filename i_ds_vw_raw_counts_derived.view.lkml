@@ -1,7 +1,7 @@
 view: i_ds_vw_raw_counts_derived {
     derived_table: {
       sql:
-select MatterNumber, IDS_Source_File, SUM(IDS_Dupe) IDS_Dupe, SUM(IDS_Ignore) IDS_Ignore, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber
+select MatterNumber, IDS_Source_File, SUM(IDS_Dupe) IDS_Dupe, SUM(IDS_Ignore) IDS_Ignore, IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber, Count(*) Record_Count
 From (
 Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore  ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_LNK_Master UNION ALL
 Select MatterNumber, IDS_Source_File, convert(int,isnull(IDS_Dupe,'0')) IDS_Dupe, convert(int,ISNULL(IDS_Ignore,'0')) IDS_Ignore ,IDS_Custodian, IDS_DeviceName, IDS_DeviceNotes, IDS_EvidenceNumber  From iDS_vw_JMP_Master UNION ALL
