@@ -1,5 +1,5 @@
-view: i_ds_vw_cafae_typedurls_master {
-  sql_table_name: dbo.iDS_vw_CAFAE_TYPEDURLS_Master ;;
+view: i_ds_vw_cafae_officedocs_master {
+  sql_table_name: dbo.iDS_vw_CAFAE_OFFICEDOCS_Master ;;
 
   dimension: csvrowid {
     type: number
@@ -37,6 +37,21 @@ view: i_ds_vw_cafae_typedurls_master {
     sql: ${TABLE}.IDS_Ignore ;;
   }
 
+  dimension: ids_path_filename_ext {
+    type: string
+    sql: ${TABLE}.ids_path_filename_ext ;;
+  }
+
+  dimension: ids_path_filename_filename {
+    type: string
+    sql: ${TABLE}.ids_path_filename_filename ;;
+  }
+
+  dimension: ids_path_filename_path {
+    type: string
+    sql: ${TABLE}.ids_path_filename_path ;;
+  }
+
   dimension: ids_source_date {
     type: string
     sql: ${TABLE}.IDS_SourceDate ;;
@@ -52,14 +67,14 @@ view: i_ds_vw_cafae_typedurls_master {
     sql: ${TABLE}.IDS_SourceID ;;
   }
 
-  dimension: item_ {
-    type: string
-    sql: ${TABLE}.item_ ;;
-  }
-
   dimension: matter_number {
     type: string
     sql: ${TABLE}.MatterNumber ;;
+  }
+
+  dimension: mod_date_utc {
+    type: string
+    sql: ${TABLE}.mod_date_UTC ;;
   }
 
   dimension: path_filename {
@@ -72,13 +87,13 @@ view: i_ds_vw_cafae_typedurls_master {
     sql: ${TABLE}.reg_date_UTC ;;
   }
 
-  dimension: typed_urls_time_utc {
+  dimension: subkey {
     type: string
-    sql: ${TABLE}.TypedURLsTime_UTC ;;
+    sql: ${TABLE}.subkey ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [path_filename, ids_device_name]
+    drill_fields: [path_filename, ids_device_name, ids_path_filename_filename]
   }
 }
