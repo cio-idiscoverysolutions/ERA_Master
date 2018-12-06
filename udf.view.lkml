@@ -242,6 +242,7 @@ view: udf {
   set: detail {
     fields: [
       udf_id,
+      date_beg_source_time,
       ppl.full_name,
       obj.obj_name,
       loc.loc_name,
