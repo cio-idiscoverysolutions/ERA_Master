@@ -136,4 +136,10 @@ view: i_ds_vw_wisp_ntfs_master {
     type: count
     drill_fields: [name, ids_device_name]
   }
+
+  measure: distinct {
+    type: count_distinct
+    drill_fields: [name, ids_device_name]
+  }
+
 }
