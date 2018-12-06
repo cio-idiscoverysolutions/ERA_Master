@@ -12,9 +12,49 @@ view: i_ds_vw_cafae_searchhist_master {
     sql: ${TABLE}.filename ;;
   }
 
+  dimension: ids_custodian {
+    type: string
+    sql: ${TABLE}.IDS_Custodian ;;
+  }
+
+  dimension: ids_device_name {
+    type: string
+    sql: ${TABLE}.IDS_DeviceName ;;
+  }
+
+  dimension: ids_device_notes {
+    type: string
+    sql: ${TABLE}.IDS_DeviceNotes ;;
+  }
+
+  dimension: ids_dupe {
+    type: string
+    sql: ${TABLE}.IDS_Dupe ;;
+  }
+
+  dimension: ids_evidence_number {
+    type: string
+    sql: ${TABLE}.IDS_EvidenceNumber ;;
+  }
+
+  dimension: ids_ignore {
+    type: string
+    sql: ${TABLE}.IDS_Ignore ;;
+  }
+
+  dimension: ids_source_date {
+    type: string
+    sql: ${TABLE}.IDS_SourceDate ;;
+  }
+
   dimension: ids_source_file {
     type: string
     sql: ${TABLE}.IDS_Source_File ;;
+  }
+
+  dimension: ids_source_id {
+    type: number
+    sql: ${TABLE}.IDS_SourceID ;;
   }
 
   dimension: item_ {
@@ -34,6 +74,6 @@ view: i_ds_vw_cafae_searchhist_master {
 
   measure: count {
     type: count
-    drill_fields: [filename]
+    drill_fields: [filename, ids_device_name]
   }
 }
