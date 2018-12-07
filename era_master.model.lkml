@@ -195,7 +195,11 @@ explore: udf {
     sql_on: ${udf.udf_id} = ${attribute.target_id} AND ${attribute.target_type} = 'U';;
     relationship: one_to_many
   }
-
+  join: i_ds_udf_map_cached{
+    type: left_outer
+    sql_on: ${i_ds_udf_map_cached.udf_id} = ${i_ds_udf_map_cached.udf_id};;
+    relationship: one_to_one
+  }
 }
 
 explore: i_ds_vw_lnk_master {}
