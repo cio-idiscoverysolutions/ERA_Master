@@ -195,37 +195,7 @@ explore: udf {
     sql_on: ${udf.udf_id} = ${attribute.target_id} AND ${attribute.target_type} = 'U';;
     relationship: one_to_many
   }
-  join: src_files{
-    type: full_outer
-    sql_on: ${src_files.scmst_id} = ${src_files.scmst_id} AND ${udf.src_id} = ${src.src_id}
-            AND (
-              ${src_files.filename} = ${i_ds_vw_lnk_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_jmp_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_openrunmru_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_opensavemru_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_user_assist_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_pf_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_sbag_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_tia_trash_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_usb_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_recentdocs_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_evt_walk_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_srum_network_usage_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_typedurls_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_searchhist_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_cafae_officedocs_master.ids_source_file}
-              OR ${src_files.filename} = ${i_ds_vw_browser_master.ids_source_file}
-            );;
-    relationship: one_to_many
-    view_label: "SRC File Name"
 
-  }
-  join: i_ds_vw_raw_counts_derived{
-    type: full_outer
-    sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File};;
-    relationship: one_to_one
-
-  }
 }
 
 explore: i_ds_vw_lnk_master {}
@@ -263,3 +233,9 @@ explore: i_ds_vw_ntfs_walk_master {}
 explore: i_ds_vw_cafae_officedocs_master {}
 
 explore: i_ds_vw_browser_master {}
+
+explore: ids_rawfile_details_cached {}
+
+explore: i_ds_rawfile_counts_cached {}
+
+explore: i_ds_udf_map_cached {}
