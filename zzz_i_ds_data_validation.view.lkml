@@ -2,7 +2,7 @@ view: zzz_i_ds_data_validation {
   derived_table: {
      sql: Select rf.*, z.ct As UDF_Count
       From iDS_RAWFile_Counts_Cached rf (NOLOCk)
-        Left Join (select FILENAME, Count(*) ct
+        Left Join (select FILENAME, Count(distinct u.IDS_SOURCEID) ct
               From iDS_UDF_Map_Cached u (NOLOCk)
               Group by FILENAME) z
            ON z.FILENAME = rf.IDS_Source_File ;;
