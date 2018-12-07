@@ -39,9 +39,9 @@ explore: cda_results {
 }
 
 explore: src_files {
-  join: i_ds_vw_raw_counts_derived{
+  join: ids_rawfile_details_cached{
     type: left_outer
-    sql_on: ${src_files.filename} = ${i_ds_vw_raw_counts_derived.IDS_Source_File};;
+    sql_on: ${src_files.filename} = ${ids_rawfile_details_cached.ids_source_file};;
     relationship: one_to_one
     view_label: "Source Files Counts"
 
