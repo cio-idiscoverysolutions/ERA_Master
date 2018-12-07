@@ -231,12 +231,18 @@ view: udf {
   measure: number_of_unique_records_by_source_file {
     type: count_distinct
     sql: ${src_record_id} ;;
+    drill_fields: [detail*]
   }
   measure: number_of_unique_folders_locations {
     type: count_distinct
     sql: ${loc_id} ;;
+    drill_fields: [detail*]
   }
-
+  measure: number_of_unique_ppl {
+    type: count_distinct
+    sql: ${ppl_id} ;;
+    drill_fields: [detail*]
+  }
 
   # ----- Sets of fields for drilling ------
   set: detail {
