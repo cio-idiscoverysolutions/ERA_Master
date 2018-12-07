@@ -92,9 +92,24 @@ view: i_ds_vw_browser_master {
     sql: ${TABLE}.Visit_Count ;;
   }
 
-  dimension: visit_time {
-    type: string
-    sql: ${TABLE}.Visit_Time ;;
+  dimension_group: visit_time {
+
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      day_of_month,
+      day_of_week,
+      hour_of_day,
+      month_name,
+      fiscal_month_num
+    ]
+    sql: ${TABLE}.visit_time ;;
   }
 
   dimension: visit_type {
