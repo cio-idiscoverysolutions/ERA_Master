@@ -197,7 +197,12 @@ explore: udf {
   }
   join: i_ds_udf_map_cached{
     type: left_outer
-    sql_on: ${i_ds_udf_map_cached.udf_id} = ${i_ds_udf_map_cached.udf_id};;
+    sql_on: ${i_ds_udf_map_cached.udf_id} = ${udf.udf_id};;
+    relationship: one_to_one
+  }
+  join: zzz_i_ds_data_validation {
+    type: full_outer
+    sql_on: ${i_ds_udf_map_cached.udf_id} = ${udf.udf_id} AND ${zzz_i_ds_data_validation.ids_source_file} = ${i_ds_udf_map_cached.filename};;
     relationship: one_to_one
   }
 }
@@ -243,3 +248,5 @@ explore: ids_rawfile_details_cached {}
 explore: i_ds_rawfile_counts_cached {}
 
 explore: i_ds_udf_map_cached {}
+
+explore: zzz_i_ds_data_validation {}
