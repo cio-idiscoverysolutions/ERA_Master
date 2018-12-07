@@ -18,12 +18,12 @@ view: zzz_i_ds_data_validation {
   }
 
   dimension: dupes {
-    type: string
+    type: number
     sql: ${TABLE}.ids_dupe ;;
   }
 
   dimension: exlusions {
-    type: string
+    type: number
     sql: ${TABLE}.ids_ignore ;;
   }
   dimension: custodian {
@@ -41,16 +41,16 @@ view: zzz_i_ds_data_validation {
   }
 
   dimension: udf_count {
-    type: string
+    type: number
     sql: ${TABLE}.udf_count ;;
   }
 
   dimension: cdf_count {
-    type: string
+    type: number
     sql: ${TABLE}.record_count ;;
   }
   dimension: rdf_count {
-    type: string
+    type: number
     sql: ${TABLE}.linecnt ;;
   }
   measure: count {
