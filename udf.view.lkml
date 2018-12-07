@@ -48,6 +48,7 @@ view: udf {
       fiscal_month_num
     ]
     sql: ${TABLE}.DATE_BEG_SOURCE ;;
+    drill_fields: [detail*]
 
   }
 
