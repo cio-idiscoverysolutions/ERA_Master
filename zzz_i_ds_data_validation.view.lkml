@@ -40,17 +40,20 @@ view: zzz_i_ds_data_validation {
     type: string
     sql: ${TABLE}.ids_evidencenumber ;;
   }
-  dimension: linecnt {
-    type: string
-    sql: ${TABLE}.linecnt ;;
-  }
+
   dimension: udf_count {
     type: string
     sql: ${TABLE}.udf_count ;;
   }
 
-
-
+  dimension: cdf_count {
+    type: string
+    sql: ${TABLE}.record_count ;;
+  }
+  dimension: rdf_count {
+    type: string
+    sql: ${TABLE}.linecnt ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
