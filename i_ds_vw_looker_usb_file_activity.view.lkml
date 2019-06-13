@@ -39,4 +39,24 @@ view: i_ds_vw_looker_usb_file_activity {
     type: count
     drill_fields: [matter_name, evt_name, obj_name]
   }
+
+  measure: count_usb {
+    type:  count
+    filters: {
+      field:evt_group
+      value: "1 - USB Activity"
+    }
+    }
+    measure: count_file {
+      type:  count
+      filters: {
+        field:evt_group
+        value: "2 - File Activity"
+      }
+
+
+  }
+
+
+
 }
