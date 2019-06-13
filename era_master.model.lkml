@@ -10,6 +10,8 @@ datagroup: era_master_default_datagroup {
 
 persist_with: era_master_default_datagroup
 
+explore: i_ds_vw_looker_usb_file_activity {}
+
 explore: src_master {}
 
 explore: evt {}
