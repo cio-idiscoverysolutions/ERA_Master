@@ -40,6 +40,11 @@ view: i_ds_vw_looker_usb_file_activity {
     sql: ${TABLE}.Obj_Name_short ;;
   }
 
+  dimension: notes {
+    type:  string
+    sql: ${TABLE}.notes ;;
+  }
+
 
   measure: count {
     type: count
