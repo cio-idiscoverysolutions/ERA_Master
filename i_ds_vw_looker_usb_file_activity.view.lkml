@@ -53,6 +53,7 @@ view: i_ds_vw_looker_usb_file_activity {
 
   measure: count_usb {
     type:  count
+    drill_fields: [date_beg_utc_time, evt_name, obj_name_short, obj_name_detail, notes]
     filters: {
       field:evt_group
       value: "1 - USB Activity"
@@ -60,6 +61,7 @@ view: i_ds_vw_looker_usb_file_activity {
     }
     measure: count_file {
       type:  count
+      drill_fields: [date_beg_utc_time, evt_name, obj_name_short, obj_name_detail, notes]
       filters: {
         field:evt_group
         value: "2 - File Activity"
