@@ -30,14 +30,20 @@ view: i_ds_vw_looker_usb_file_activity {
     sql: ${TABLE}.Matter_Name ;;
   }
 
-  dimension: obj_name {
+  dimension: obj_name_detail {
     type: string
-    sql: ${TABLE}.Obj_Name ;;
+    sql: ${TABLE}.Obj_Name_detail ;;
   }
+
+  dimension: obj_name_short {
+    type: string
+    sql: ${TABLE}.Obj_Name_short ;;
+  }
+
 
   measure: count {
     type: count
-    drill_fields: [matter_name, evt_name, obj_name]
+    drill_fields: [matter_name, evt_name, obj_name_short]
   }
 
   measure: count_usb {
